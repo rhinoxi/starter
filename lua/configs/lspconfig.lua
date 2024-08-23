@@ -4,7 +4,16 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls" }
+local servers = {
+  "html",
+  "cssls",
+  "gopls",
+  "rust_analyzer",
+  "r_language_server",
+  "gdscript",
+  "pyright",
+  -- "elixirls"
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -22,3 +31,14 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+lspconfig.elixirls.setup {
+  cmd = { vim.fn.stdpath "data" .. "/mason/packages/elixir-ls/language_server.sh"},
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    ["elixirLS"] = {
+      dialyzerEnabled = true,
+    }
+  }
+}
