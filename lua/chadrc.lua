@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "onenord",
+	theme = "gruvchad",
 
   -- statusline = {
   --   theme = "minimal",

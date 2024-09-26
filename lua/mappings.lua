@@ -9,6 +9,16 @@ local map = vim.keymap.set
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+map("n", "H", function ()
+  require("nvchad.tabufline").prev()
+end)
+
+map("n", "L", function ()
+  require("nvchad.tabufline").next()
+end)
+
+map({"n", "i", "v"}, "<F1>", "<ESC>")
+
 
 -- hop
 map("n", "f", "<cmd>HopChar2<cr>")
@@ -44,3 +54,10 @@ map("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = "togg
 map("n", "<leader>ds", "<cmd>lua require'dap'.continue()<cr>", { desc = "start" })
 map("n", "<leader>dq", "<cmd>lua require'dap'.close()<cr>", { desc = "quit" })
 
+-- telescope
+map("n", "<leader>ft", "<cmd>lua require'telescope.builtin'.grep_string()<cr>", { desc = "grep string" })
+
+-- disable tab
+local nomap = vim.keymap.del
+
+nomap("n", "<tab>")

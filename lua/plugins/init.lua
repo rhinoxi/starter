@@ -94,7 +94,7 @@ return {
     dependencies = "nvim-dap",
     config = function()
       require("dap-go").setup()
-      require("dap.ext.vscode").load_launchjs()
+      -- require("dap.ext.vscode").load_launchjs()
     end,
   },
   {
@@ -103,7 +103,7 @@ return {
     dependencies = "nvim-dap",
     config = function()
       require("dap-python").setup()
-      require("dap.ext.vscode").load_launchjs()
+      -- require("dap.ext.vscode").load_launchjs()
     end,
   },
 }
