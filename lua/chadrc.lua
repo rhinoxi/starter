@@ -5,16 +5,19 @@
 local M = {}
 
 M.base46 = {
-	theme = "gruvchad",
-
-  -- statusline = {
-  --   theme = "minimal",
-  -- }
+	theme = "onenord",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
+}
+
+M.ui = {
+  statusline = {
+    theme = "default",
+  }
+
 }
 
 return M

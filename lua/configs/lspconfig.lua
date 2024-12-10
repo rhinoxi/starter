@@ -12,7 +12,6 @@ local servers = {
   "r_language_server",
   "gdscript",
   "pyright",
-  -- "elixirls"
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -32,13 +31,12 @@ end
 --   capabilities = nvlsp.capabilities,
 -- }
 
-lspconfig.elixirls.setup {
-  cmd = { vim.fn.stdpath "data" .. "/mason/packages/elixir-ls/language_server.sh"},
+lspconfig.lexical.setup {
+  cmd = { vim.fn.stdpath "data" .. "/mason/packages/lexical/libexec/lexical/bin/start_lexical.sh"},
+  root_dir = function(fname)
+    return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+  end,
+  filetypes = { "elixir", "eelixir", "heex" },
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-  settings = {
-    ["elixirLS"] = {
-      dialyzerEnabled = true,
-    }
-  }
 }
