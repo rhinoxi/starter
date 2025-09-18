@@ -36,6 +36,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99
 
+vim.opt.laststatus = 3
+
 vim.opt.fileencodings="utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1"
 vim.cmd [[set jumpoptions+=stack]]
 

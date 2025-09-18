@@ -22,7 +22,7 @@ local sources = {
   -- b.diagnostics.flake8.with({
   --   extra_args = {"--extend-ignore", "E501,E203"},
   -- }),
-  b.formatting.black,
+  -- b.formatting.black,
 
   -- go
   b.formatting.goimports,
@@ -33,6 +33,9 @@ local sources = {
   -- elixir
   b.diagnostics.credo,
   b.formatting.mix,
+
+  -- c
+  b.formatting.clang_format,
 }
 
 null_ls.setup {
